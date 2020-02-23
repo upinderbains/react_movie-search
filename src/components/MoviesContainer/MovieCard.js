@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MovieCard = props => {
   return (
@@ -8,15 +9,15 @@ const MovieCard = props => {
           <img
             className="w-100 mb-2"
             src={props.movies.Poster}
-            alt="Movie Cover"
+            alt="Cover"
           />
           <h5 className="text-light card-title">
             {props.movies.Title} - {props.movies.Year}
           </h5>
-          <a className="btn btn-primary" href="#">
+          <Link className="btn btn-primary" to={'/movie/' + props.movies.imdbID}>
             Movie Details
             <i className="fas fa-chevron-right" />
-          </a>
+          </Link>
         </div>
       </div>
     </>

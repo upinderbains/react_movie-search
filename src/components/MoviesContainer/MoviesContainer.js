@@ -11,7 +11,7 @@ const MoviesContainer = () => {
       ? movies.map((movie, index) => <MovieCard key={index} movies={movie} />)
       : null;
 
-  return <div>{content}</div>;
+  return <div className="row">{content}</div>;
 };
 
 export default MoviesContainer;

@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
-import { GlobalContext } from "../../../GlobalState/GlobalState"
-
+import { GlobalContext } from "../../../GlobalState/GlobalState";
 
 const Search = () => {
   const [input, setInput] = useState("");
-  const { search } = useContext(GlobalContext)
+  const { search, setLoading } = useContext(GlobalContext);
   const submit = e => {
     e.preventDefault();
     search(input);
+    setLoading();
   };
   return (
     <div className="jumbotron jumbotron-fluid mt-5 text-center">
@@ -24,7 +24,7 @@ const Search = () => {
             onChange={e => setInput(e.target.value)}
             placeholder="Search Movies, Tv-shows ..."
           />
-          
+
           <button type="submit" className="btn btn-primary btn-bg mt-3">
             Search
           </button>
