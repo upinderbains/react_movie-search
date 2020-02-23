@@ -16,7 +16,6 @@ const Movie = () => {
   let movieContent = (
     <div className="row">
       <div className="col-md-4 card card-body">
-       
         <img className="thumbnail" src={movie.Poster} alt="Poster" />
       </div>
       <div className="col-md-8">
@@ -59,12 +58,12 @@ const Movie = () => {
             >
               View onIMDB
             </a>
+            <Link to="/" className="btn btn-deafult text-light">
+              Go Back To Search
+            </Link>
           </div>
         </div>
       </div>
-      <Link to="/" className="btn btn-primary">
-      Go Back To Search
-    </Link>
     </div>
   );
 

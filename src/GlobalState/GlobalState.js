@@ -14,7 +14,9 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, intialState);
   const search = text => {
     axios
-      .get(`http://www.omdbapi.com/?apikey=43ac1065&s=${text}`)
+      .get(
+        `https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?apikey=43ac1065&s=${text}`
+      )
       .then(response => {
         dispatch({ type: "SEARCH", payload: response.data });
       })
@@ -22,7 +24,9 @@ export const GlobalProvider = ({ children }) => {
   };
   const fetchMovie = id => {
     axios
-      .get(`http://www.omdbapi.com/?apikey=43ac1065&i=${id}`)
+      .get(
+        `https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?apikey=43ac1065&i=${id}`
+      )
       .then(response => {
         dispatch({ type: "FETCH", payload: response.data });
       })
